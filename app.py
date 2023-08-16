@@ -13,9 +13,7 @@ API_KEY = os.environ.get("API_KEY")
 def predict():
     provided_api_key = request.headers.get("X-API-Key")
     if provided_api_key == API_KEY:
-        data = (
-            request.json
-        )  # Assuming frontend sends JSON data with 'url' and 'question' fields
+        data = request.json
         url = data["url"]
         question = data["question"]
 
