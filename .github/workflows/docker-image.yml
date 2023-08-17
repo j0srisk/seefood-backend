@@ -1,0 +1,21 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Docker Buildx
+      run: docker buildx create --use
+    - name: Build the Docker image
+      run: docker buildx build --platform linux/amd64 -t seefood-backend .
+
