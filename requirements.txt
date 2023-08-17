@@ -2,6 +2,7 @@
 
 flask
 flask_cors
+gunicorn
 transformers
 Pillow
 torch==2.0.1+cpu
