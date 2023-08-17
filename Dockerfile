@@ -17,8 +17,7 @@ COPY . /app/
 EXPOSE 5000
 
 # Define environment variable
-ENV FLASK_APP app.py
 ENV API_KEY placeholderKey
 
-# Run the Flask app
-CMD ["flask", "run", "--host=0.0.0.0"]
+# Run Gunicorn with the specified configuration file
+CMD ["gunicorn", "-c", "gunicorn_config.py", "app:app"]

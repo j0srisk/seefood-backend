@@ -1,14 +1,14 @@
 import os
+import time
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from transformers import ViltProcessor, ViltForQuestionAnswering
-import requests
-import time
 from PIL import Image
+
+API_KEY = os.environ.get("API_KEY")
 
 app = Flask(__name__)
 CORS(app)
-API_KEY = os.environ.get("API_KEY")
 
 
 @app.route("/predict", methods=["POST"])
@@ -19,9 +19,6 @@ def predict():
 
         question = request.form["question"]
         image_file = request.files["file"]
-
-        print(question)
-        print(image_file)
 
         image = Image.open(image_file)
 
@@ -43,8 +40,3 @@ def predict():
         return jsonify({"answer": answer, "processing_time_ms": processing_time})
     else:
         return jsonify({"error": "Unauthorized"}), 401
-
-
-# testing the API locally
-# if __name__ == "__main__":
-# app.run(host="0.0.0.0", port=8080)
