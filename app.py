@@ -1,5 +1,6 @@
 import os
 import time
+import torch
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from transformers import ViltProcessor, ViltForQuestionAnswering
@@ -9,6 +10,11 @@ API_KEY = os.environ.get("API_KEY")
 
 app = Flask(__name__)
 CORS(app)
+
+if torch.cuda.is_available():
+    print("GPU is available and being used.")
+else:
+    print("No GPU available, using CPU.")
 
 
 @app.route("/predict", methods=["POST"])
