@@ -1,8 +1,8 @@
--f https://download.pytorch.org/whl/torch_stable.html
+# -f https://download.pytorch.org/whl/torch_stable.html
 
 flask
 flask_cors
 gunicorn
 transformers
 Pillow
-torch==2.0.1+cpu
+torch
