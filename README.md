@@ -23,6 +23,7 @@ Here're some of the project's best features:
 *   Containerized Enviroment
 *   Customizable API Key
 *   Concurent AI Workers
+*   Automatic Builds With GitHub Actions
 
   
   
