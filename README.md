@@ -12,7 +12,7 @@
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://github.com/j0srisk/personal-site/blob/main/src/assets/images/projects/not-hotdog.png?raw=true" alt="project-screenshot" width="400" height="auto">
+<img src="https://github.com/j0srisk/personal-site/blob/main/src/assets/projects/not-hotdog.png?raw=true" alt="project-screenshot" width="400" height="auto">
 
   
   
